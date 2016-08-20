@@ -6,9 +6,14 @@ import edu.princeton.cs.algs4.StdOut;
 /**
  * Created by xuan on 2016/8/20.
  */
-public class Example {
+public class Insertion {
     public static void sort(Comparable[] a) {
-
+        int N = a.length;
+        for (int i = 1; i < N; i++) {
+            for (int j = i; j > 0 && less(a[j], a[j-1]); j--) { //好凝练。。。插入方式类似冒泡
+                exch(a, j, j-1);
+            }
+        }
     }
 
     private static boolean less(Comparable v, Comparable w) {
